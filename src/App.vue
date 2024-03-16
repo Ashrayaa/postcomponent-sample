@@ -1,10 +1,10 @@
 <template>
   <main class="flex flex-col">
-    <nav class="h-8 border-b border-gray-300 pb-1 mr-4 w-full"></nav>
-    <div class="grid grid-flow-col grid-cols-3 ">
-      <div class="w-1/2 border-r border-gray-300 h-[100v]">Sidebar</div>
+    <nav class="hidden sm:block h-8 border-b border-gray-300 pb-1 mr-4 w-full"></nav>
+    <div class="sm:grid sm:grid-flow-col sm:grid-cols-3 p-4">
+      <div class="hidden sm:block w-1/2 border-r border-gray-300 "></div>
       <div
-        class="flex h- flex-col font-Roboto border border-black border-solid rounded-lg m-10 w-[460px] py-4 backdrop-blur-md"
+        class="flex flex-col font-Roboto border border-black border-solid rounded-lg md:m-10 w-full md:w-[460px] md:py-4 backdrop-blur-md"
       >
         <ProfileComponent />
         <PostContent />

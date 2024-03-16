@@ -8,7 +8,7 @@
     <img
       src="./../assets/dino1.jpg"
       alt="Profile image"
-      class="h-80"
+      class="sm:h-80 h-52"
     />
   </div>
 </template>

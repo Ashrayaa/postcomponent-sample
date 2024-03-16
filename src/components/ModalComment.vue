@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-4 bg-white p-4 fixed w-80 m-14 backdrop-blur-2xl">
+  <div class="flex flex-col  gap-4 bg-white p-4 fixed w-80 m-4 sm:m-14">
     <div class="flex justify-between items-center">
       <h2 class="text-sm ml-4 font-semibold text-start">Comment</h2>
       <button class="mr-4" @click="closeModal">&times;</button>
