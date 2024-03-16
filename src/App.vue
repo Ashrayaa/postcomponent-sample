@@ -1,25 +1,32 @@
 <template>
-  <div
-    class="flex flex-col font-Roboto border border-black border-solid rounded-lg m-10 w-[460px] py-4 backdrop-blur-md"
-  >
-    <ProfileComponent />
-    <PostContent />
-    <div class="text-start m-4">
-      <p class="text-gray-600 text-[10px]">💬 John Nelson Caampued and {{ commentCount }} others commented</p>
+  <main class="flex flex-col">
+    <nav class="h-8 border-b border-gray-300 pb-1 mr-4 w-full"></nav>
+    <div class="grid grid-flow-col grid-cols-3 ">
+      <div class="w-1/2 border-r border-gray-300 h-[100v]">Sidebar</div>
+      <div
+        class="flex h- flex-col font-Roboto border border-black border-solid rounded-lg m-10 w-[460px] py-4 backdrop-blur-md"
+      >
+        <ProfileComponent />
+        <PostContent />
+        <div class="flex justify-end m-4">
+          <!-- <p class="text-gray-600 text-[10px]">💬 John Nelson Caampued and {{ commentCount }} others liked</p> -->
+          <p class="text-gray-600 text-[10px]">{{ commentCount }} Comments</p>
+        </div>
+        <div class="h-[1px] w-full bg-gray-200"></div>
+        <div class="flex justify-around pt-8">
+          <like-button />
+          <CommentButton @open-modal="openModal" />
+          <repost-button />
+        </div>
+        <!-- <comment-modal/> -->
+        <ModalComment
+          v-if="showModal"
+          @close-modal="closeModal"
+          @add-comment="addComment"
+        />
+      </div>
     </div>
-    <div class="h-[1px] w-full bg-gray-200"></div>
-    <div class="flex justify-around pt-8">
-      <like-button />
-      <CommentButton @open-modal="openModal" />
-      <repost-button />
-    </div>
-    <!-- <comment-modal/> -->
-    <ModalComment
-      v-if="showModal"
-      @close-modal="closeModal"
-      @add-comment="addComment"
-    />
-  </div>
+  </main>
 </template>
 
 <script>
@@ -58,7 +65,7 @@ export default {
       commentCount.value++;
       closeModal();
     };
-    return {showModal, openModal, closeModal, commentCount, addComment};
+    return { showModal, openModal, closeModal, commentCount, addComment };
   },
 };
 </script>
